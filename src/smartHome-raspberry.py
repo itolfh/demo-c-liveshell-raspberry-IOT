@@ -8,9 +8,17 @@ from time import sleep
 realData = ''
 realData = realData + sys.argv[1]
 
+#控制灯的gpio口（BCM模型下的gpio编号）
 ledGpio=23
-ledStatus=0
+#控制门的gpio口（BCM模型下的gpio编号）
 doorGpio=18
+#门开的电机角度值
+doorOpenValue = 10
+#门关的电机角度值
+doorCloseValue = 5
+
+#灯和门的状态
+ledStatus=0
 doorStatus=0
 
 #change a json string to dict
@@ -45,9 +53,9 @@ else:
 #If door status is 1, turn door on, else turn off.
 #
 if(doorStatus == 1):
-	motor.ChangeDutyCycle(10)
+	motor.ChangeDutyCycle(doorOpenValue)
 	sleep(2)
 else:
-	motor.ChangeDutyCycle(5)
+	motor.ChangeDutyCycle(doorCloseValue)
 	sleep(2)
 	
