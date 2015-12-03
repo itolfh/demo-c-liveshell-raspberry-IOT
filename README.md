@@ -17,6 +17,8 @@
 1. 下载并安装liveshell（参见liveshell项目的readme）；
 2. 在野狗网站中建立一个app，并建立云端数据树来控制门和灯。其中，led节点的值代表灯的状态；door节点的值代表门的状态。0代表关，1代表开；
 
+![](docs/resource/tree.png)
+
 ##### python脚本配置
 
 在smartHome-raspberry.py中，根据自己需要，设置以下值：
