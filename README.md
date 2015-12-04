@@ -28,6 +28,17 @@
 	doorOpenValue：门开的电机角度值
 	doorCloseValue：门关的电机角度值
 
+该脚本依赖RPi.GPIO模组，所以，需要先在树莓派上安装python开发包和RPi.GPIO模组
+
+	sudo apt-get install python-dev python-pip
+	sudo pip install RPi.GPIO
+
+如果已有模组但仍报错，需要升级模组
+	
+	sudo pip install --upgrade RPi.GPIO
+
+
+
 ##### 硬件配置
 
 需要材料：树莓派一台、led灯一个、直流电机一个、杜邦线若干。
@@ -36,12 +47,12 @@
 
 ####使用
 
-1. 将smartHome-raspberry.py拷贝到树莓派下，并设置可执行权限
+1. 将src/smartHome-raspberry.py拷贝到树莓派下，并设置可执行权限
 
 		cp smartHome-raspberry.py ~
 		cd ~
 		sudo chmod +x smartHome-raspberry.py
 2. 运行liveshell（上图中appid为demo）
 		
-		liveshell coap://你的appid.wilddogio.com smartHome-raspberry.py
+		sudo liveshell coap://你的appid.wilddogio.com smartHome-raspberry.py
 3. 更改云端门或者灯的值，即可看见灯和门的变化。
